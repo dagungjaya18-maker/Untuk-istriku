@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Fasta Chairita ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+}
+
+body{
+    background:#020008;
+    color:white;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+/* =========================
+   GALAXY BACKGROUND
+========================= */
+
+.galaxy{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+
+    background:
+        radial-gradient(circle at 50% 45%,
+        rgba(255,40,160,.25),
+        transparent 25%),
+
+        radial-gradient(circle at 20% 20%,
+        rgba(190,30,255,.16),
+        transparent 35%),
+
+        radial-gradient(circle at 80% 75%,
+        rgba(255,0,130,.14),
+        transparent 35%),
+
+        #020008;
+}
+
+.nebula{
+    position:absolute;
+    width:80vw;
+    height:80vw;
+    left:10vw;
+    top:5vh;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,90,190,.18),
+            rgba(255,0,130,.08) 35%,
+            transparent 70%
+        );
+
+    filter:blur(35px);
+
+    animation:
+        nebulaMove 14s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaMove{
+    from{
+        transform:scale(.9) rotate(0deg);
+    }
+
+    to{
+        transform:scale(1.25) rotate(25deg);
+    }
+}
+
+/* =========================
+   STARS
+========================= */
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 6px white,
+        0 0 14px #ff70c7;
+
+    animation:twinkle var(--duration) ease-in-out infinite;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.15;
+        transform:scale(.5);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.8);
+    }
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    position:relative;
+    z-index:5;
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+
+    padding:
+        35px
+        18px
+        100px;
+}
+
+.small-title{
+    color:#ffd4ec;
+
+    font-size:
+        clamp(12px,2.5vw,18px);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    opacity:0;
+
+    animation:
+        fadeIn 2s ease forwards 1s;
+}
+
+.main-title{
+
+    margin-top:12px;
+
+    font-size:
+        clamp(25px,6vw,52px);
+
+    font-weight:400;
+
+    color:white;
+
+    text-shadow:
+        0 0 15px #ff4baa,
+        0 0 35px #ff1493,
+        0 0 70px rgba(255,0,140,.6);
+
+    opacity:0;
+
+    animation:
+        fadeIn 2s ease forwards 2s;
+}
+
+@keyframes fadeIn{
+    to{
+        opacity:1;
+    }
+}
+
+/* =========================
+   ARCHER
+========================= */
+
+.archer{
+    position:relative;
+
+    width:350px;
+    max-width:90vw;
+
+    height:130px;
+
+    margin-top:25px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+
+    animation:
+        fadeIn 1.5s ease forwards 3s;
+}
+
+.archer-character{
+
+    font-size:70px;
+
+    filter:
+        drop-shadow(0 0 10px #ff43ad)
+        drop-shadow(0 0 25px #ff008c);
+
+    transform:scaleX(-1);
+}
+
+.bow{
+
+    position:absolute;
+
+    width:80px;
+    height:110px;
+
+    border:
+        3px solid #ff9ddd;
+
+    border-left:0;
+
+    border-radius:
+        0 100% 100% 0;
+
+    left:50%;
+    top:10px;
+
+    transform:
+        translateX(-50%)
+        rotate(-7deg);
+
+    filter:
+        drop-shadow(0 0 10px #ff3fa9);
+}
+
+.bow-string{
+
+    position:absolute;
+
+    width:100px;
+    height:2px;
+
+    background:#fff;
+
+    left:50%;
+    top:63px;
+
+    transform:
+        translateX(-50%);
+
+    box-shadow:
+        0 0 8px white,
+        0 0 15px #ff4bb0;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.arrow{
+
+    position:absolute;
+
+    left:50%;
+
+    top:63px;
+
+    width:
+        min(420px,70vw);
+
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ff8bd2,
+            #ff1a9c,
+            #ffffff
+        );
+
+    box-shadow:
+        0 0 8px white,
+        0 0 20px #ff32a7,
+        0 0 40px #ff008c;
+
+    transform-origin:left center;
+
+    opacity:0;
+
+    animation:
+        arrowShoot
+        8s
+        cubic-bezier(.2,.1,.15,1)
+        forwards
+        5s;
+}
+
+.arrow:after{
+
+    content:"➤";
+
+    position:absolute;
+
+    right:-18px;
+    top:-13px;
+
+    font-size:25px;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #ff38ad;
+}
+
+@keyframes arrowShoot{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(0)
+            scaleX(.05);
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    25%{
+        transform:
+            translateX(10px)
+            scaleX(.25);
+    }
+
+    50%{
+        transform:
+            translateX(100px)
+            scaleX(.55);
+    }
+
+    75%{
+        transform:
+            translateX(220px)
+            scaleX(.82);
+    }
+
+    92%{
+        opacity:1;
+
+        transform:
+            translateX(330px)
+            scaleX(1);
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translateX(370px)
+            scaleX(1);
+    }
+}
+
+/* =========================
+   LOVE GALAXY
+========================= */
+
+.love-area{
+
+    position:relative;
+
+    width:
+        min(850px,100vw);
+
+    height:450px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+}
+
+/* galaxy core */
+
+.galaxy-core{
+
+    position:absolute;
+
+    width:290px;
+    height:290px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            white 0%,
+            #ffd5ed 3%,
+            #ff8bd0 8%,
+            #ff229d 20%,
+            rgba(190,20,130,.45) 40%,
+            transparent 70%
+        );
+
+    box-shadow:
+
+        0 0 30px #ff5db7,
+        0 0 70px #ff1598,
+        0 0 130px rgba(255,0,145,.5);
+
+    animation:
+        corePulse 3s ease-in-out infinite;
+}
+
+@keyframes corePulse{
+
+    0%,100%{
+        transform:scale(.95);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+/* orbital rings */
+
+.orbit{
+
+    position:absolute;
+
+    width:460px;
+    height:145px;
+
+    border:
+        2px solid rgba(255,110,200,.55);
+
+    border-radius:50%;
+
+    transform:rotate(-15deg);
+
+    box-shadow:
+        0 0 15px #ff3faa;
+
+    animation:
+        orbitRotate 7s linear infinite;
+}
+
+.orbit:nth-child(2){
+
+    width:530px;
+    height:180px;
+
+    transform:rotate(30deg);
+
+    border-color:
+        rgba(255,205,239,.28);
+
+    animation-duration:10s;
+
+    animation-direction:reverse;
+}
+
+.orbit:nth-child(3){
+
+    width:360px;
+    height:110px;
+
+    transform:rotate(70deg);
+
+    border-color:
+        rgba(255,40,170,.4);
+
+    animation-duration:5s;
+}
+
+@keyframes orbitRotate{
+
+    from{
+        transform:
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            rotate(360deg);
+    }
+}
+
+/* =========================
+   3D I LOVE YOU
+========================= */
+
+.love-text{
+
+    position:relative;
+
+    z-index:5;
+
+    font-family:
+        Arial Black,
+        Impact,
+        sans-serif;
+
+    font-weight:900;
+
+    font-size:
+        clamp(48px,12vw,105px);
+
+    line-height:.85;
+
+    letter-spacing:2px;
+
+    color:white;
+
+    transform:
+        perspective(600px)
+        rotateX(10deg);
+
+    text-shadow:
+
+        0 3px 0 #ffb5e2,
+        0 6px 0 #ff76c5,
+        0 9px 0 #ed3ba3,
+        0 12px 0 #a80b70,
+
+        0 0 20px #ff55b7,
+        0 0 50px #ff1597,
+        0 0 90px rgba(255,0,140,.9);
+
+    animation:
+        loveFloat 4s ease-in-out infinite,
+        loveColor 5s linear infinite;
+}
+
+.love-text span{
+    display:block;
+}
+
+@keyframes loveFloat{
+
+    0%,100%{
+        transform:
+            perspective(600px)
+            rotateX(10deg)
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            perspective(600px)
+            rotateX(-8deg)
+            translateY(-13px)
+            scale(1.04);
+    }
+}
+
+@keyframes loveColor{
+
+    0%,100%{
+        filter:
+            hue-rotate(0deg)
+            brightness(1);
+    }
+
+    50%{
+        filter:
+            hue-rotate(25deg)
+            brightness(1.25);
+    }
+}
+
+/* =========================
+   SPARKLES
+========================= */
+
+.spark{
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px #ff38aa;
+
+    animation:
+        sparkle 3s ease-in-out infinite;
+}
+
+@keyframes sparkle{
+
+    0%,100%{
+        opacity:.1;
+        transform:scale(.3);
+    }
+
+    50%{
+        opacity:1;
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(1.5);
+    }
+}
+
+/* =========================
+   IMPACT
+========================= */
+
+.impact{
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    border:
+        2px solid white;
+
+    border-radius:50%;
+
+    opacity:0;
+
+    animation:
+        impact 2s ease-out forwards 13s;
+}
+
+.impact:before,
+.impact:after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-20px;
+
+    border:
+        2px solid #ff55b5;
+
+    border-radius:50%;
+
+    animation:
+        ripple 2s ease-out infinite;
+}
+
+.impact:after{
+
+    inset:-50px;
+
+    animation-delay:.2s;
+}
+
+@keyframes impact{
+
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes ripple{
+
+    to{
+        transform:scale(2.5);
+        opacity:0;
+    }
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-container{
+
+    position:relative;
+
+    width:
+        min(330px,78vw);
+
+    aspect-ratio:
+        1 / 1.15;
+
+    margin-top:-15px;
+
+    opacity:0;
+
+    transform:
+        translateY(40px)
+        scale(.9);
+
+    animation:
+        photoAppear
+        3s
+        cubic-bezier(.2,.8,.2,1)
+        forwards
+        14s;
+}
+
+@keyframes photoAppear{
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+.photo-container:before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-6px;
+
+    border-radius:30px;
+
+    background:
+        conic-gradient(
+            #ffb4df,
+            #ff1598,
+            #c535ff,
+            #ff5db9,
+            white,
+            #ff1598
+        );
+
+    animation:
+        borderRotate 5s linear infinite;
+
+    z-index:-1;
+}
+
+@keyframes borderRotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.photo-container:after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-25px;
+
+    border-radius:40px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,20,145,.5),
+            transparent 65%
+        );
+
+    filter:blur(20px);
+
+    z-index:-2;
+}
+
+.photo-frame{
+
+    position:absolute;
+
+    inset:5px;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:#12000e;
+
+    border:
+        3px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 0 30px #ff1d9c,
+        0 0 80px rgba(255,0,140,.4);
+}
+
+.photo-frame img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    animation:
+        photoZoom 6s ease-in-out infinite alternate;
+}
+
+@keyframes photoZoom{
+
+    to{
+        transform:scale(1.05);
+
+        filter:
+            brightness(1.08)
+            saturate(1.15);
+    }
+}
+
+.photo-name{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:
+        45px 10px 15px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(30,0,20,.95)
+        );
+
+    font-size:20px;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff55b7;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+
+    width:
+        min(780px,94vw);
+
+    margin-top:55px;
+
+    padding:
+        30px 20px 50px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,60,160,.09),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid rgba(255,140,210,.25);
+
+    box-shadow:
+        inset 0 0 50px rgba(255,0,130,.07),
+        0 0 50px rgba(255,0,130,.08);
+
+    backdrop-filter:blur(8px);
+}
+
+.line{
+
+    margin:
+        0 auto 28px;
+
+    max-width:700px;
+
+    font-size:
+        clamp(17px,3.8vw,25px);
+
+    line-height:1.8;
+
+    color:#ffeaf7;
+
+    opacity:0;
+
+    transform:
+        translateY(20px);
+
+    text-shadow:
+        0 0 12px rgba(255,80,180,.3);
+}
+
+.line.show{
+
+    animation:
+        sentenceAppear
+        2.8s
+        ease
+        forwards;
+}
+
+@keyframes sentenceAppear{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(25px);
+        filter:blur(6px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0);
+        filter:blur(0);
+    }
+}
+
+.signature{
+
+    margin-top:45px;
+
+    font-family:
+        Arial Black,
+        sans-serif;
+
+    font-size:
+        clamp(24px,6vw,43px);
+
+    color:#ff9ed8;
+
+    text-shadow:
+        0 0 15px #ff239c,
+        0 0 40px #ff008c;
+
+    opacity:0;
+}
+
+.signature.show{
+
+    animation:
+        signatureIn
+        4s ease
+        forwards;
+}
+
+@keyframes signatureIn{
+
+    from{
+        opacity:0;
+        transform:
+            scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            scale(1);
+    }
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:20;
+}
+
+.heart{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    left:var(--left);
+
+    font-size:var(--size);
+
+    filter:
+        drop-shadow(0 0 8px #ff32a7);
+
+    animation:
+        heartRise
+        var(--time)
+        linear
+        forwards;
+}
+
+@keyframes heartRise{
+
+    to{
+
+        transform:
+            translateY(-110vh)
+            translateX(var(--move))
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    margin-top:50px;
+
+    color:#dba8ca;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    opacity:.65;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .container{
+        padding-top:25px;
+    }
+
+    .love-area{
+        height:390px;
+    }
+
+    .galaxy-core{
+        width:230px;
+        height:230px;
+    }
+
+    .orbit{
+        width:340px;
+        height:110px;
+    }
+
+    .orbit:nth-child(2){
+        width:400px;
+        height:140px;
+    }
+
+    .orbit:nth-child(3){
+        width:280px;
+        height:85px;
+    }
+
+    .message{
+        padding:
+            25px 16px 45px;
+    }
+
+    .line{
+        line-height:1.7;
+        margin-bottom:25px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="galaxy">
+    <div class="nebula"></div>
+</div>
+
+<div id="stars"></div>
+<div id="hearts"></div>
+
+
+<main class="container">
+
+    <div class="small-title">
+        Sebuah pesan dari hatiku...
+    </div>
+
+    <h1 class="main-title">
+        Untuk istriku tercinta,<br>
+        Fasta Chairita ❤️
+    </h1>
+
+
+    <!-- PEMANAH -->
+
+    <div class="archer">
+
+        <div class="archer-character">
+            🏹
+        </div>
+
+        <div class="bow"></div>
+
+        <div class="bow-string"></div>
+
+        <div class="arrow"></div>
+
+    </div>
+
+
+    <!-- LOVE GALAXY -->
+
+    <section class="love-area">
+
+        <div class="galaxy-core"></div>
+
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+
+        <div class="impact"></div>
+
+        <div class="love-text">
+            <span>I LOVE</span>
+            <span>YOU</span>
+        </div>
+
+    </section>
+
+
+    <!-- FOTO ISTRI -->
+
+    <div class="photo-container">
+
+        <div class="photo-frame">
+
+            <img
+                src="https://drive.google.com/uc?export=view&id=1ejqgihtPyaCMyDQ_N0iPLlvfljD8X1BC"
+                alt="Fasta Chairita"
+                onerror="
+                    this.onerror=null;
+                    this.src='https://drive.google.com/thumbnail?id=1ejqgihtPyaCMyDQ_N0iPLlvfljD8X1BC&sz=w1200';
+                "
+            >
+
+            <div class="photo-name">
+                Fasta Chairita ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PESAN ROMANTIS -->
+
+    <section class="message" id="message">
+
+        <p class="line">
+            Sayang...
+        </p>
+
+        <p class="line">
+            Bacalah setiap kalimat ini perlahan...
+            karena aku ingin kamu merasakan apa yang sebenarnya ada di dalam hatiku.
+        </p>
+
+        <p class="line">
+            Dari begitu banyak manusia yang Tuhan ciptakan di dunia ini...
+            aku merasa menjadi salah satu laki-laki paling beruntung karena dipertemukan denganmu.
+        </p>
+
+        <p class="line">
+            Kamu bukan sekadar wanita yang aku cintai.
+        </p>
+
+        <p class="line">
+            Kamu adalah wanita yang membuat hidupku mempunyai arti yang berbeda.
+        </p>
+
+        <p class="line">
+            Senyummu...
+            mungkin sederhana bagi dunia,
+            tetapi bagiku senyummu adalah salah satu hal terindah yang pernah aku miliki.
+        </p>
+
+        <p class="line">
+            Ketika aku lelah...
+            memikirkanmu membuatku ingin kembali kuat.
+        </p>
+
+        <p class="line">
+            Ketika aku sedang jatuh...
+            mengingat bahwa ada kamu di sampingku membuatku ingin berdiri kembali.
+        </p>
+
+        <p class="line">
+            Terima kasih...
+            karena sudah memilih aku untuk menjadi pasangan hidupmu.
+        </p>
+
+        <p class="line">
+            Terima kasih karena tetap bersamaku,
+            bahkan ketika aku belum menjadi suami yang sempurna.
+        </p>
+
+        <p class="line">
+            Aku tahu...
+            aku pernah melakukan kesalahan.
+        </p>
+
+        <p class="line">
+            Aku juga tahu mungkin ada saat-saat ketika aku membuat hatimu kecewa.
+        </p>
+
+        <p class="line">
+            Tetapi percayalah...
+        </p>
+
+        <p class="line">
+            Ada satu hal yang tidak pernah berubah di dalam diriku.
+        </p>
+
+        <p class="line">
+            Aku tetap mencintaimu.
+        </p>
+
+        <p class="line">
+            Bahkan ketika hari-hari tidak selalu mudah...
+            hatiku tetap memilih kamu.
+        </p>
+
+        <p class="line">
+            Aku tidak ingin hanya berada di sampingmu ketika semuanya bahagia.
+        </p>
+
+        <p class="line">
+            Aku ingin berada di sampingmu ketika hidup sedang sulit.
+        </p>
+
+        <p class="line">
+            Ketika kamu tertawa...
+            aku ingin menjadi orang yang ikut tersenyum melihat kebahagiaanmu.
+        </p>
+
+        <p class="line">
+            Ketika kamu menangis...
+            aku ingin menjadi tempat pertama untukmu bersandar.
+        </p>
+
+        <p class="line">
+            Dan ketika kamu merasa dunia terlalu berat...
+            aku ingin kamu mengingat bahwa kamu tidak pernah sendirian.
+        </p>
+
+        <p class="line">
+            Karena aku ingin berjalan bersamamu...
+            bukan hanya untuk hari ini.
+        </p>
+
+        <p class="line">
+            Tetapi untuk sebanyak mungkin hari yang Tuhan masih berikan kepada kita.
+        </p>
+
+        <p class="line">
+            Aku ingin melihat rambutmu berubah bersama rambutku.
+        </p>
+
+        <p class="line">
+            Aku ingin melihat kita menua bersama.
+        </p>
+
+        <p class="line">
+            Aku ingin suatu hari nanti kita melihat kembali perjalanan hidup kita...
+            lalu tersenyum karena ternyata kita berhasil melewati semuanya bersama-sama.
+        </p>
+
+        <p class="line">
+            Dari miliaran manusia...
+            dari jutaan cerita cinta...
+            dan dari begitu banyak jalan yang mungkin aku pilih...
+        </p>
+
+        <p class="line">
+            hatiku tetap memilih satu nama.
+        </p>
+
+        <p class="line">
+            Namamu.
+        </p>
+
+        <p class="line">
+            Fasta Chairita.
+        </p>
+
+        <p class="line">
+            Istriku...
+            cintaku...
+            rumah hatiku...
+            dan bagian terindah dari perjalanan hidupku.
+        </p>
+
+        <p class="line">
+            Jika aku boleh meminta satu hal kepada Tuhan...
+        </p>
+
+        <p class="line">
+            aku hanya ingin diberikan kesempatan untuk terus mencintaimu,
+            menjaga hatimu,
+            dan membuatmu tersenyum selama mungkin.
+        </p>
+
+        <p class="line">
+            Karena bagiku...
+            cinta bukan hanya tentang mengucapkan "I love you".
+        </p>
+
+        <p class="line">
+            Cinta adalah tetap memilih orang yang sama,
+            setiap hari,
+            bahkan ketika kehidupan tidak selalu sempurna.
+        </p>
+
+        <p class="line">
+            Dan aku...
+            akan terus memilihmu.
+        </p>
+
+        <p class="line">
+            Hari ini.
+        </p>
+
+        <p class="line">
+            Besok.
+        </p>
+
+        <p class="line">
+            Dan selama Tuhan masih memberikan kita waktu.
+        </p>
+
+
+        <div class="signature" id="signature">
+            ❤️ I LOVE YOU, FASTA CHAIRITA ❤️
+        </div>
+
+    </section>
+
+
+    <div class="footer">
+        Dibuat dengan cinta, khusus untuk istriku ❤️
+    </div>
+
+</main>
+
+
+<script>
+
+/* =====================================
+   BINTANG
+===================================== */
+
+const stars =
+    document.getElementById("stars");
+
+for(let i=0;i<260;i++){
+
+    const star =
+        document.createElement("span");
+
+    star.className="star";
+
+    star.style.left =
+        Math.random()*100+"vw";
+
+    star.style.top =
+        Math.random()*100+"vh";
+
+    star.style.setProperty(
+        "--duration",
+        (1.5+Math.random()*4)+"s"
+    );
+
+    star.style.animationDelay =
+        Math.random()*5+"s";
+
+    stars.appendChild(star);
+}
+
+
+/* =====================================
+   SPARKLES DI LOVE GALAXY
+===================================== */
+
+const loveArea =
+    document.querySelector(".love-area");
+
+for(let i=0;i<45;i++){
+
+    const spark =
+        document.createElement("span");
+
+    spark.className="spark";
+
+    spark.style.left =
+        (50+(Math.random()*60-30))+"%";
+
+    spark.style.top =
+        (50+(Math.random()*70-35))+"%";
+
+    spark.style.setProperty(
+        "--x",
+        (Math.random()*200-100)+"px"
+    );
+
+    spark.style.setProperty(
+        "--y",
+        (Math.random()*200-100)+"px"
+    );
+
+    spark.style.animationDelay =
+        Math.random()*3+"s";
+
+    loveArea.appendChild(spark);
+}
+
+
+/* =====================================
+   HATI TERBANG
+===================================== */
+
+const hearts =
+    document.getElementById("hearts");
+
+function createHeart(){
+
+    const heart =
+        document.createElement("span");
+
+    heart.className="heart";
+
+    const symbols=[
+        "❤️",
+        "💗",
+        "💖",
+        "💕",
+        "💓",
+        "✨"
+    ];
+
+    heart.textContent =
+        symbols[
+            Math.floor(
+                Math.random()*symbols.length
+            )
+        ];
+
+    heart.style.setProperty(
+        "--left",
+        Math.random()*100+"vw"
+    );
+
+    heart.style.setProperty(
+        "--size",
+        (12+Math.random()*25)+"px"
+    );
+
+    heart.style.setProperty(
+        "--move",
+        (Math.random()*180-90)+"px"
+    );
+
+    heart.style.setProperty(
+        "--time",
+        (6+Math.random()*7)+"s"
+    );
+
+    hearts.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },14000);
+}
+
+setInterval(
+    createHeart,
+    700
+);
+
+
+/* =====================================
+   KALIMAT MUNCUL SATU PER SATU
+===================================== */
+
+const lines =
+    document.querySelectorAll(".line");
+
+const signature =
+    document.getElementById("signature");
+
+
+/*
+   1 kalimat setiap ±5 detik.
+
+   Dibuat sengaja lambat agar
+   istri bisa membaca satu per satu.
+*/
+
+let delay = 15500;
+
+lines.forEach((line,index)=>{
+
+    setTimeout(()=>{
+
+        line.classList.add("show");
+
+        /*
+          Tambahkan sedikit variasi
+          agar tidak terasa mekanis.
+        */
+
+    },delay);
+
+    delay +=
+        4800 +
+        Math.min(index*80,1200);
+});
+
+
+/* =====================================
+   SIGNATURE TERAKHIR
+===================================== */
+
+setTimeout(()=>{
+
+    signature.classList.add("show");
+
+},delay+1800);
+
+</script>
+
+</body>
+</html>
